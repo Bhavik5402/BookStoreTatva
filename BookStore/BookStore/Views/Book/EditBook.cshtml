@@ -1,0 +1,17 @@
+﻿@model BookModel
+
+<h1>Edit Book</h1>
+<form method="post">
+  <div class="mb-3">
+    <label asp-for="Title" class="form-label">Title of book</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" asp-for="Title">
+    
+  </div>
+  <div class="mb-3">
+    <label asp-for="Author" class="form-label">Author</label>
+    <input asp-for = "Author" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+

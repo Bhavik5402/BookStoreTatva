@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BookStore.Models.BookModel>
+
+
+    
+        <h1>Get All Books</h1>
+        <a class = "btn btn-primary" asp-controller = "Book" asp-action = "AddBook">Add Book</a>
+    <table class="table">
+  <thead>
+    <tr>
+        <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model.Title)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model.Author)</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var x in Model)
+      {
+            <tr>
+      <td>@x.Id</td>
+      <td>@x.Title</td>
+      <td>@x.Author</td>
+    <td><a asp-controller = "Book" asp-action = "EditBook" asp-route-id = "@x.Id" class = "btn btn-primary">Edit</a></td>
+    <td><a asp-controller = "Book" asp-action = "DeleteBook" asp-route-id = "@x.Id" class = "btn btn-primary" method = "post">Delete</a></td>
+</tr>
+
+      }
+      </tbody>
+</table>
+    
+    
+
