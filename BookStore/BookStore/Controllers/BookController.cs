@@ -60,19 +60,24 @@ namespace BookStore.Controllers
         }
 
 
-        public IActionResult DeleteBook(int? id)
+
+        public IActionResult Delete(int? id)
         {
             var book = _db.bookModels.Find(id);
 
-            return RedirectToAction("GetAllBooks");
+            return View(book);
         }
 
         [HttpPost]
-        public IActionResult DeleteBook(BookModel obj)
+        public IActionResult DeleteBook(int? id)
         {
-            _db.bookModels.Remove(obj);
+            var book = _db.bookModels.Find(id);
+            _db.bookModels.Remove(book);
             _db.SaveChanges();
             return RedirectToAction("GetAllBooks");
+            //return View("AllCategories");
+
         }
     }
-}
+    }
+

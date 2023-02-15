@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@model BookModel
+
+<h1>Delete Book</h1>
+<form method="post" asp-action="DeleteBook">
+    <input asp-for = "Id" hidden/>
+  <div class="mb-3">
+    <label asp-for="Title" class="form-label">Title of book</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" asp-for="Title">
+    
+  </div>
+  <div class="mb-3">
+    <label asp-for="Author" class="form-label">Author</label>
+    <input asp-for = "Author" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+

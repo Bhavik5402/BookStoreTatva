@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BookStore.Models.Category>
+@{
+    ViewData["Title"] = "AllCategories";
+}
+
+<div class = "row">
+    <div class = "col-6">
+        <h1>Display Categories</h1>
+    </div>
+    <div class = "col-6">
+        <a asp-controller = "Category" asp-action = "AddCategory" class = "btn btn-primary">Add Category</a>
+    </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">@Html.DisplayNameFor(model => model.Id)</th>
+      <th scope="col">@Html.DisplayNameFor(model => model.DisaplayOrder)</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      @foreach (var item in Model)
+      {
+          <tr>
+      
+      <td>@item.Name</td>
+      <td>@item.DisaplayOrder</td>
+      <td><a asp-controller = "Category" asp-action = "EditCategory" asp-route-id = "@item.Id" class = "btn btn-primary">Edit</a></td>
+    <td><a asp-controller = "Category" asp-action = "Delete" asp-route-id = "@item.Id" class = "btn btn-danger">Delete</a></td>
+    </tr>
+          
+      }
+    
+    
+  </tbody>
+</table>
+

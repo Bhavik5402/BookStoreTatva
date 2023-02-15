@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "AddCategory";
+}
+
+@model Category
+
+
+<h1>Add Book</h1>
+<form method="post">
+  <div class="mb-3">
+    <label asp-for="Name" class="form-label">Name Of Category</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" asp-for="Name">
+    <span asp-validation-for = "Name" class = "text-danger"></span>
+    
+  </div>
+  <div class="mb-3">
+    <label asp-for="DisaplayOrder" class="form-label">Order</label>
+    <input asp-for = "DisaplayOrder" type="text" class="form-control" id="exampleInputPassword1">
+    <span asp-validation-for = "DisaplayOrder" class = "text-danger"></span>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add Category</button>
+</form>
+
+
+

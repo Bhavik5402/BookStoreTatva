@@ -12,5 +12,7 @@ namespace BookStore.Data
         }
 
         public DbSet<BookModel> bookModels { get; set; }
+
+        public DbSet<Category> categories { get; set; }
     }
 }

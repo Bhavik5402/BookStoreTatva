@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+@model Category
+
+<h1>Delete Book</h1>
+<form method="post" asp-action = "DeleteCategory">
+    <input asp-for = "Id" hidden/>
+  <div class="mb-3">
+    <label asp-for="Name" class="form-label">Category Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" asp-for="Name" disabled>
+    
+  </div>
+  <div class="mb-3">
+    <label asp-for="DisaplayOrder" class="form-label">Order</label>
+    <input asp-for = "DisaplayOrder" type="text" class="form-control" id="exampleInputPassword1" disabled>
+  </div>
+
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+
